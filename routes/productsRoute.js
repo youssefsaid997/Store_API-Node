@@ -5,9 +5,12 @@ const {
 	updateProduct,
 	getProducts,
 	getOneProduct,
+	getQueriedProducts,
 } = require('../controllers/productController');
 
 router.route('/').get(getProducts).post(createProduct);
+
+router.route('/search').get(getQueriedProducts);
 
 router
 	.route('/:id')
